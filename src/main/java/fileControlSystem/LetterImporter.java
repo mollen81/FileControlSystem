@@ -16,6 +16,9 @@ public class LetterImporter implements Importer
         TextFile textFile = new TextFile(file);
         textFile.addLineSuffix(NAME_PREFIX, NAME);
 
+        int lineNumber = textFile.addLines(2, String::isEmpty, ADDRESS);
+        textFile.addLines(lineNumber + 1, (line) -> line.startsWith("С наилучшими пожеланиями,"), BODY);
+
         final Map<String, String> attributes = new java.util.HashMap<>(textFile.getAttributes());
         attributes.put(TYPE, LETTER);
 

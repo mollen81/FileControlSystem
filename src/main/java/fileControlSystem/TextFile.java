@@ -32,7 +32,7 @@ class TextFile
         }
     }
 
-    void addLines(final int start, Predicate<String> isEnd, final String attributeName) {
+    int addLines(final int start, Predicate<String> isEnd, final String attributeName) {
         final StringBuilder sb = new StringBuilder();
         int lineNumber;
 
@@ -47,6 +47,7 @@ class TextFile
         }
 
         attributes.put(attributeName, sb.toString().trim());
+        return lineNumber;
     }
 
     Map<String, String> getAttributes() {

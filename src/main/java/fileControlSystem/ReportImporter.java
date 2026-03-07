@@ -16,6 +16,8 @@ public class ReportImporter implements Importer
         TextFile textFile = new TextFile(file);
         textFile.addLineSuffix(NAME_PREFIX, NAME);
 
+        textFile.addLines(2, String::isEmpty, BODY);
+
         final Map<String, String> attributes = new java.util.HashMap<>(textFile.getAttributes());
         attributes.put(TYPE, REPORT);
 

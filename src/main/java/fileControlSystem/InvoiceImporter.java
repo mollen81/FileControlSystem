@@ -18,6 +18,7 @@ public class InvoiceImporter implements Importer
         textFile.addLineSuffix(NAME_PREFIX, NAME);
         textFile.addLineSuffix(AMOUNT_PREFIX, AMOUNT);
 
+        textFile.addLines(2, (line) -> line.startsWith("С наилучшими пожеланиями"), BODY);
         Map<String, String> attributes = new java.util.HashMap<>(textFile.getAttributes());
         attributes.put(TYPE, INVOICE);
 
