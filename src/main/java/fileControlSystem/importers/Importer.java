@@ -1,8 +1,7 @@
-package importers;
+package fileControlSystem.importers;
 
 import java.io.File;
 import java.io.IOException;
-import domain_objects.Document;
 
 public interface Importer
 {
