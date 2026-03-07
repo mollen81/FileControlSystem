@@ -19,7 +19,10 @@ public class FileControlSystem
         extensionToImporter.put("report", new ReportImporter());
     }
 
-    public void importFile(String path){}
+    public void importFile(String path)
+    {
+
+    }
 
     public List<Document> getDocuments(){}
 

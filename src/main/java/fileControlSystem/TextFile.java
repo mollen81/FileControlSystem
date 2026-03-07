@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 
 import static fileControlSystem.Attributes.PATH;
 
@@ -29,6 +30,23 @@ class TextFile
                 break;
             }
         }
+    }
+
+    void addLines(final int start, Predicate<String> isEnd, final String attributeName) {
+        final StringBuilder sb = new StringBuilder();
+        int lineNumber;
+
+        for(lineNumber = start; lineNumber < lines.size(); lineNumber++) {
+            final String line = lines.get(lineNumber);
+            if(isEnd.test(line)) {
+                break;
+            }
+
+            sb.append(line);
+            sb.append("\n");
+        }
+
+        attributes.put(attributeName, sb.toString().trim());
     }
 
     Map<String, String> getAttributes() {

@@ -12,6 +12,7 @@ public class Attributes
     //documents attributes
     public static final String NAME = "name";
     public static final String AMOUNT = "amount";
+    public static final String BODY = "body";
 
     //file extension attributes
     public static final String IMAGE = "image";
