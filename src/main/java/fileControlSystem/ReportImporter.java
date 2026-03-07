@@ -1,15 +1,12 @@
-package fileControlSystem.importers;
-
-import fileControlSystem.attributes.Attributes;
+package fileControlSystem;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LetterImporter implements Importer
+public class ReportImporter implements Importer
 {
-
     @Override
     public Document importFile(File file) throws IOException
     {
@@ -18,6 +15,4 @@ public class LetterImporter implements Importer
 
         return new Document(attributes);
     }
-
-
 }

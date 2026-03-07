@@ -1,4 +1,4 @@
-package fileControlSystem.importers;
+package fileControlSystem;
 
 import java.io.File;
 import java.io.IOException;

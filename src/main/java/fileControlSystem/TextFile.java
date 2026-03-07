@@ -4,17 +4,14 @@ import java.io.File;
 import java.util.List;
 import java.util.Map;
 
-import static fileControlSystem.attributes.Attributes.NAME_PREFIX;
-
 class TextFile
 {
-    private final Map<String, String> attributes;
+    private final Map<String, String> attributes = Map.of();
     private final List<String> lines;
 
     public TextFile(File file)
     {
         this.lines = file.toString().lines().toList();
-        addLineSuffix(NAME_PREFIX, "Уважаемый");
     }
 
     void addLineSuffix(final String prefix, final String attributeName)
@@ -27,5 +24,9 @@ class TextFile
                 break;
             }
         }
+    }
+
+    Map<String, String> getAttributes() {
+        return this.attributes;
     }
 }

@@ -1,8 +1,8 @@
-import fileControlSystem.importers.Document;
-import fileControlSystem.importers.ImageImporter;
-import fileControlSystem.importers.Importer;
-import fileControlSystem.importers.LetterImporter;
-import fileControlSystem.importers.ReportImporter;
+import fileControlSystem.Document;
+import fileControlSystem.ImageImporter;
+import fileControlSystem.Importer;
+import fileControlSystem.LetterImporter;
+import fileControlSystem.ReportImporter;
 
 import java.util.HashMap;
 import java.util.List;

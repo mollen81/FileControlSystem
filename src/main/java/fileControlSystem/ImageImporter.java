@@ -1,6 +1,4 @@
-package fileControlSystem.importers;
-
-import fileControlSystem.attributes.Attributes;
+package fileControlSystem;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
