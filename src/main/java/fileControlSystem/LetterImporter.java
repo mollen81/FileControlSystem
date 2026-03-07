@@ -16,7 +16,7 @@ public class LetterImporter implements Importer
         TextFile textFile = new TextFile(file);
         textFile.addLineSuffix(NAME_PREFIX, NAME);
 
-        final Map<String, String> attributes = new  java.util.HashMap<>(textFile.getAttributes());
+        final Map<String, String> attributes = new java.util.HashMap<>(textFile.getAttributes());
         attributes.put(TYPE, LETTER);
 
         return new Document(attributes);
