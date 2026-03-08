@@ -1,12 +1,10 @@
-import fileControlSystem.*;
+package fileControlSystem;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.FileAlreadyExistsException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class FileControlSystem
 {
@@ -50,6 +48,14 @@ public class FileControlSystem
         }
     }
 
+    public List<Document> getDocuments() {
+        return viewableDocuments;
+    }
 
+    public List<Document> search(final String query) {
+        return documents.stream()
+                .filter(Query.parse(query))
+                .collect(Collectors.toList());
+    }
 
 }
