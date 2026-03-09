@@ -16,9 +16,11 @@ public class InvoiceImporter implements Importer
     {
         TextFile textFile = new TextFile(file);
         textFile.addLineSuffix(NAME_PREFIX, NAME);
+
+        textFile.addLines(2, String::isEmpty, BODY);
+
         textFile.addLineSuffix(AMOUNT_PREFIX, AMOUNT);
 
-        textFile.addLines(2, (line) -> line.startsWith("regards"), BODY);
         Map<String, String> attributes = new java.util.HashMap<>(textFile.getAttributes());
         attributes.put(TYPE, INVOICE);
 

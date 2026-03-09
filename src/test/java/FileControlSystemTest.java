@@ -61,9 +61,9 @@ public class FileControlSystemTest {
         assertAttributeEquals(document, Attributes.PATH, INVOICE);
         assertAttributeEquals(document, NAME, JOE_BLOGGS);
         assertAttributeEquals(document, BODY,
-                "Here is your invoice for the dental treatment that you received.\n");
+                "Here is your invoice for the dental treatment that you received.");
         assertAttributeEquals(document, AMOUNT, "$100");
-        assertTypeIs("INVOICE", document);
+        assertTypeIs("invoice", document);
     }
 
 
