@@ -66,6 +66,21 @@ public class FileControlSystemTest {
         assertTypeIs("invoice", document);
     }
 
+    @Test
+    public void shouldImportReportAttribute() throws Exception {
+        system.importFile(REPORT);
+
+        final Document document = onlyDocument();
+
+        assertAttributeEquals(document, Attributes.PATH, REPORT);
+        assertAttributeEquals(document, NAME, JOE_BLOGGS);
+        assertAttributeEquals(document, BODY,
+                "On 5th January 2017 I examined Joe's teeth.\n" +
+                        "We discussed his switch from drinking Coke to Diet Coke.\n" +
+                        "No new problems were noted with his teeth.");
+        assertTypeIs("report", document);
+    }
+
 
     private void assertAttributeEquals(
             final Document document,
