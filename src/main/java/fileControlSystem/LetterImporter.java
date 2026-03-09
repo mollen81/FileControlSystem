@@ -8,7 +8,7 @@ import static fileControlSystem.Attributes.*;
 
 public class LetterImporter implements Importer
 {
-    static final String NAME_PREFIX = "Уважаемый ";
+    static final String NAME_PREFIX = "Dear ";
 
     @Override
     public Document importFile(File file) throws IOException
@@ -17,7 +17,7 @@ public class LetterImporter implements Importer
         textFile.addLineSuffix(NAME_PREFIX, NAME);
 
         int lineNumber = textFile.addLines(2, String::isEmpty, ADDRESS);
-        textFile.addLines(lineNumber + 1, (line) -> line.startsWith("С наилучшими пожеланиями,"), BODY);
+        textFile.addLines(lineNumber + 1, (line) -> line.startsWith("regards,"), BODY);
 
         final Map<String, String> attributes = new java.util.HashMap<>(textFile.getAttributes());
         attributes.put(TYPE, LETTER);

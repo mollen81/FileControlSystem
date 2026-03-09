@@ -8,7 +8,7 @@ import static fileControlSystem.Attributes.*;
 
 public class ReportImporter implements Importer
 {
-    static final String NAME_PREFIX = "Пациент: ";
+    static final String NAME_PREFIX = "Patient: ";
 
     @Override
     public Document importFile(File file) throws IOException

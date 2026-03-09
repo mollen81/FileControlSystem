@@ -17,8 +17,6 @@ public class FileControlSystem
         extensionToImporter.put("letter", new LetterImporter());
         extensionToImporter.put("jpg", new ImageImporter());
         extensionToImporter.put("report", new ReportImporter());
-    }
-    {
         extensionToImporter.put("invoice", new InvoiceImporter());
     }
 

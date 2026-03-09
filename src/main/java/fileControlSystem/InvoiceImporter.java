@@ -8,8 +8,8 @@ import static fileControlSystem.Attributes.*;
 
 public class InvoiceImporter implements Importer
 {
-    private final static String NAME_PREFIX = "Уважаемый: ";
-    private final static String AMOUNT_PREFIX = "Сумма: ";
+    private final static String NAME_PREFIX = "Dear ";
+    private final static String AMOUNT_PREFIX = "Amount: ";
 
     @Override
     public Document importFile(File file) throws IOException
@@ -18,7 +18,7 @@ public class InvoiceImporter implements Importer
         textFile.addLineSuffix(NAME_PREFIX, NAME);
         textFile.addLineSuffix(AMOUNT_PREFIX, AMOUNT);
 
-        textFile.addLines(2, (line) -> line.startsWith("С наилучшими пожеланиями"), BODY);
+        textFile.addLines(2, (line) -> line.startsWith("regards"), BODY);
         Map<String, String> attributes = new java.util.HashMap<>(textFile.getAttributes());
         attributes.put(TYPE, INVOICE);
 
