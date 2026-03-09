@@ -26,6 +26,15 @@ public class FileControlSystemTest {
     private FileControlSystem system = new FileControlSystem();
 
     @Test
+    public void shouldImportFile() throws Exception {
+        system.importFile(LETTER);
+
+        final Document document = onlyDocument();
+
+        assertAttributeEquals(document, PATH, LETTER);
+    }
+
+    @Test
     public void shouldImportLetterAttribute() throws Exception {
         system.importFile(LETTER);
 
