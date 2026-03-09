@@ -52,6 +52,21 @@ public class FileControlSystemTest {
         assertTypeIs("LETTER", document);
     }
 
+    @Test
+    public void shouldImportInvoiceAttribute() throws Exception {
+        system.importFile(INVOICE);
+
+        final Document document = onlyDocument();
+
+        assertAttributeEquals(document, Attributes.PATH, INVOICE);
+        assertAttributeEquals(document, NAME, JOE_BLOGGS);
+        assertAttributeEquals(document, BODY,
+                "Here is your invoice for the dental treatment that you received.\n");
+        assertAttributeEquals(document, AMOUNT, "$100");
+        assertTypeIs("INVOICE", document);
+    }
+
+
     private void assertAttributeEquals(
             final Document document,
             final String attributeName,
@@ -59,9 +74,9 @@ public class FileControlSystemTest {
     )
     {
         assertEquals(
-                "Document has the wrong value for " + attributeName,
                 expectedValue,
-                document.getAttribute(attributeName));
+                document.getAttribute(attributeName),
+                "Document has the wrong value for " + attributeName);
     }
 
     private void assertTypeIs(String fileType, Document document) {
