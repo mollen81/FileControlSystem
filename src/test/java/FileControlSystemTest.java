@@ -49,7 +49,7 @@ public class FileControlSystemTest {
         assertAttributeEquals(document, BODY,
                 "We are writing to you to confirm the re-scheduling of your appointment\n" +
                 "with Dr. Avaj from 29th December 2016 to 5th January 2017.");
-        assertTypeIs("letter", document);
+        assertTypeIs(Attributes.LETTER, document);
     }
 
     @Test
@@ -63,7 +63,7 @@ public class FileControlSystemTest {
         assertAttributeEquals(document, BODY,
                 "Here is your invoice for the dental treatment that you received.");
         assertAttributeEquals(document, AMOUNT, "$100");
-        assertTypeIs("invoice", document);
+        assertTypeIs(Attributes.INVOICE, document);
     }
 
     @Test
@@ -78,7 +78,20 @@ public class FileControlSystemTest {
                 "On 5th January 2017 I examined Joe's teeth.\n" +
                         "We discussed his switch from drinking Coke to Diet Coke.\n" +
                         "No new problems were noted with his teeth.");
-        assertTypeIs("report", document);
+        assertTypeIs(Attributes.REPORT, document);
+    }
+
+    @Test
+    public void shouldImportImageAttribute() throws Exception {
+        system.importFile(IMAGE);
+
+        final Document document = onlyDocument();
+
+        assertAttributeEquals(document, Attributes.PATH, IMAGE);
+        assertAttributeEquals(document, HEIGHT, document.getAttribute("height"));
+        assertAttributeEquals(document, WIDTH, document.getAttribute("width"));
+
+        assertTypeIs(Attributes.IMAGE, document);
     }
 
 
