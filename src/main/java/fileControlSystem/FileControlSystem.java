@@ -20,7 +20,7 @@ public class FileControlSystem
         extensionToImporter.put("invoice", new InvoiceImporter());
     }
 
-    public void importFile(String path) throws IOException
+    public void importFile(final String path) throws IOException
     {
         File file = new File(path);
         if (!file.exists()) {

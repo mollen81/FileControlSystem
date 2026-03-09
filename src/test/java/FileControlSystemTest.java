@@ -40,7 +40,7 @@ public class FileControlSystemTest {
 
         final Document document = onlyDocument();
 
-        assertAttributeEquals(document, Attributes.PATH, LETTER);
+        assertAttributeEquals(document, NAME, JOE_BLOGGS);
         assertAttributeEquals(document, ADDRESS,
                 "123 Fake Street\n" +
                         "Westminster\n" +
@@ -48,8 +48,8 @@ public class FileControlSystemTest {
                         "United Kingdom");
         assertAttributeEquals(document, BODY,
                 "We are writing to you to confirm the re-scheduling of your appointment\n" +
-                "with Dr. Avaj from 29th December 2016 to 5th January 2017.\n");
-        assertTypeIs("LETTER", document);
+                "with Dr. Avaj from 29th December 2016 to 5th January 2017.");
+        assertTypeIs("letter", document);
     }
 
     @Test
