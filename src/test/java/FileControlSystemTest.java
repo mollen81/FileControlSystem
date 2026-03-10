@@ -97,8 +97,8 @@ public class FileControlSystemTest {
                         "United Kingdom");
         assertAttributeEquals(document, Attributes.MEDICINAL_PRODUCT, "antibiotic");
         assertAttributeEquals(document, Attributes.DOSAGE_AND_SCHEDULE,
-                "take as prescribed: follow the exact dosage and frequency instructed by your doctor. Do not take more or less than the specified amount.\n" +
-        "Maintain consistency: To ensure a steady level of the medication in your bloodstream, take the antibiotic at regular intervals throughout the day\n" +
+                "Dosage and schedule: take as prescribed: follow the exact dosage and frequency instructed by your doctor. Do not take more or less than the specified amount.\n" +
+        "Maintain consistency: To ensure a steady level of the medication in your bloodstream, take the antibiotic at regular intervals throughout the day.\n" +
         "Timing: If instructed to take the medicine multiple times daily, spread the doses out evenly (e.g., every 8 or 12 hours).\n" +
         "Administration Conditions: With or without food: Some antibiotics should be taken on an empty stomach (typically 1 hour before or 2 hours after a meal) for optimal absorption,\n" +
         "while others are best taken with food to reduce potential stomach upset.\n" +

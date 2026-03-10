@@ -18,6 +18,7 @@ public class FileControlSystem
         extensionToImporter.put("jpg", new ImageImporter());
         extensionToImporter.put("report", new ReportImporter());
         extensionToImporter.put("invoice", new InvoiceImporter());
+        extensionToImporter.put("receipt", new ReceiptImporter());
     }
 
     public void importFile(final String path) throws IOException

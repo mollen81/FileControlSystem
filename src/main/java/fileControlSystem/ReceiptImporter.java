@@ -9,6 +9,7 @@ import static fileControlSystem.Attributes.*;
 public class ReceiptImporter implements Importer
 {
     static final String PATIENT_PREFIX = "Patient: ";
+    static final String MEDICINAL_PRODUCT_PREFIX = "Medicinal product: ";
 
     @Override
     public Document importFile(File file) throws IOException {
@@ -16,8 +17,8 @@ public class ReceiptImporter implements Importer
         textFile.addLineSuffix(PATIENT_PREFIX, NAME);
 
         int lineNumber = textFile.addLines(2, String::isEmpty, ADDRESS);
-        lineNumber = textFile.addLines(lineNumber + 1, String::isEmpty, MEDICINAL_PRODUCT);
-        textFile.addLines(lineNumber + 1, String::isEmpty, DOSAGE_AND_SCHEDULE);
+        textFile.addLineSuffix(MEDICINAL_PRODUCT_PREFIX, MEDICINAL_PRODUCT);
+        textFile.addLines(lineNumber + 3, String::isEmpty, DOSAGE_AND_SCHEDULE);
 
         final Map<String, String> attributes = textFile.getAttributes();
         attributes.put(TYPE, RECEIPT);
